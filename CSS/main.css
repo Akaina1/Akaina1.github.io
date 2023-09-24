@@ -12,7 +12,7 @@ body {
     background: linear-gradient(to top left, #E3C5CA 0%,#E3C5CA 20%,#aee2ee 40%,#aee2ee 50%,#E3C5CA 70%,#E3C5CA 100% );
 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-.home__title {
+.page__title {
     position: absolute;
     font-size: 80px;
     line-height: 1.3;
@@ -30,8 +30,9 @@ body {
     display: inline-block;
     opacity: 0;
     transform: translateY(1em);
-    transition: all 0.75s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 .home__header {
     position: fixed;
@@ -49,26 +50,9 @@ body {
     margin: auto;
     padding-bottom: 25px;
     padding-top: 25px;
+    position: relative;
 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-.nav__bar {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    padding-bottom: 10px;
-    background-color: var(--background-color)
-}
-.nav__bar ul {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    list-style: none;
-    margin: auto;
-    padding-bottom: 25px;
-    padding-top: 25px;
-}
-
 /* Initial State */
 .nav__button {
     display: flex;
@@ -84,6 +68,64 @@ body {
     cursor: pointer;
     overflow: hidden;
 }
+
+.nav__button--activated {
+    width: 250px;
+    height: 250px;
+    animation: none;
+}
+.nav__button--activated {
+    width: 250px;
+    height: 250px;
+    animation: none;
+}
+
+.nav__submenu {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+    /* Define initial state for submenu buttons */
+    .nav__submenu .nav__subbutton {
+        opacity: 0;
+        transition: opacity 0.5s, top 0.5s, left 0.5s; /* Add transition */
+    }
+
+.nav__subbutton {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #FFFFFF 0%,#FFFFFF 20%,#aee2ee 30%,#aee2ee 50%,#FFFFFF 70%,#FFFFFF 100% );
+    color: transparent;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+    /* Define positions around the circle */
+    .nav__submenu.show .nav__subbutton:nth-child(1) {
+        top: -30%;
+        left: 50%;
+        opacity: 1;
+    }
+
+    .nav__submenu.show .nav__subbutton:nth-child(2) {
+        top: 50%;
+        left: -40%;
+        opacity: 1;
+    }
+
+    .nav__submenu.show .nav__subbutton:nth-child(3) {
+        top: 50%;
+        left: 140%;
+        opacity: 1;
+    }
+
 
 .nav__button-text {
     font-size: 20px;
@@ -106,7 +148,6 @@ body {
         font-family: 'Nanum Gothic Coding', cursive;
         font-size: 32px;
     }
-
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 @keyframes growShrink {
     0%, 100% {
