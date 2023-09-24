@@ -58,53 +58,55 @@ body {
     padding-top: 25px;
 }
 
+/* Initial State */
 .nav__button {
-    width: 40px; /* Circle dimensions */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
     height: 40px;
-    padding: 10px; /* Padding to keep text inside */
-    border-radius: 50%; /* Make it a circle */
-    background-color: var(--primary-text-color); /* Background color */
-    color: transparent; /* Make text transparent initially */
-    font-size: 20px; /* Set font size */
-    text-align: center;
-    line-height: 40px; /* Align the text vertically */
-    transition: all 0.5s ease; /* Transition settings */
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #FFFFFF 0%,#FFFFFF 20%,#aee2ee 30%,#FFFFFF 70%,#FFFFFF 100% );
+    transition: all 0.5s ease;
+    cursor: pointer;
+    overflow: hidden;
 }
 
+.nav__button-text {
+    font-size: 20px;
+    color: transparent;
+    transition: color 0.5s ease;
+}
 
-    .nav__button:hover {
-        width: 100px; /* Increase dimensions */
-        height: 100px;
-        line-height: 100px; /* Adjust line height to new dimensions */
-        color: var(--primary-text-color); /* Make text visible */
-    }
+.nav__button--initial {
+    animation: growShrink 3.5s ease-in-out infinite;
+}
 
-    .nav__button--initial {
-        width: 0;
-        height: 0;
-        line-height: 0;
-        padding: 0;
-        color: transparent; /* Make text transparent initially */
-        animation: loadAnimation 0.5s ease forwards;
+/* Hover State */
+.nav__button:hover {
+    width: 200px;
+    height: 200px;
+}
+
+    .nav__button:hover .nav__button-text {
+        color: var(--primary-text-color);
+        font-family: 'Nanum Gothic Coding', cursive;
     }
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-@keyframes loadAnimation {
-    0% {
-        width: 0;
-        height: 0;
-        line-height: 0;
-        padding: 0;
+@keyframes growShrink {
+    0%, 100% {
+        width: 25px;
+        height: 25px;
     }
-
-    100% {
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-        padding: 10px;
+    
+    50% {
+        width: 125px;
+        height: 125px;
     }
 }
-
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
