@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Event Listeners
+// Load Event Listener
 document.addEventListener("DOMContentLoaded", function () {
     // Initial Animation for navButton
     const navButton = document.querySelector('.nav__button');
@@ -53,7 +53,29 @@ document.addEventListener("DOMContentLoaded", function () {
     pageTitles.forEach(animateTitle); // Assuming you've defined animateTitle elsewhere
 });
 ////////////////////////////////////////////////////////////////////////////////////////
+// dropdown menu
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdownIcon = document.getElementById('dropdown-icon');
+    const navbar = document.getElementById('navbar');
 
+    // Timer to re-show dropdown icon
+    let timer;
+
+    // Event Listener to show navbar on hover over dropdown icon
+    dropdownIcon.addEventListener('mouseover', function () {
+        navbar.style.opacity = '1';
+    });
+
+    // Event Listener to hide navbar on mouseleave
+    navbar.addEventListener('mouseleave', function () {
+        navbar.style.opacity = '0';
+    });
+
+    // Event Listener to cancel timer if mouse is back in navbar
+    navbar.addEventListener('mouseover', function () {
+        clearTimeout(timer);
+    });
+});
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Functions
 function animateTitle(titleElement) {

@@ -22,10 +22,35 @@
 
 <body>
 
-    <div class="home__header">
+    <!-- Dropdown Icon -->
+    <div id="dropdown-icon" class="dropdown-icon">
+        <i class="fas fa-bars"></i>  <!-- Using FontAwesome for the icon. Include FontAwesome in your project for this to work -->
+        <span class="dropdown-text">Quick Links</span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <ul>
+            <li>
+                <a href="https://github.com/Akaina1" target="_blank">
+                    <i class="fab fa-github"></i> Public Github Projects
+                </a>
+            </li>
+            <li>
+                <a href="path/to/your/resume.pdf" download>
+                    <i class="fas fa-file"></i> Download Resume PDF
+                </a>
+            </li>
+            <!-- Add more quick links as list items -->
+        </ul>
+    </nav>
+
+    <!--Page Header-->
+    <div class="page__header">
         <h1 class="page__title" id="pageTitle">About Me</h1>
     </div>
 
+    <!--Main Nav Button-->
     <div class="home__nav">
         <button class="nav__button" id="mainButton">
             <div class="text-wrapper">

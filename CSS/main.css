@@ -45,7 +45,7 @@ body {
 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-.home__header {
+.page__header {
     position: fixed;
     width: 100%;
     top: 0;
@@ -66,6 +66,68 @@ body {
     position: relative;
 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* General styling for the hidden class */
+.hidden {
+    display: none;
+}
+
+/* Dropdown icon styling */
+#dropdown-icon {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.dropdown-text {
+    margin-left: 8px; 
+    font-size: 24px; /
+    color: #000; 
+}
+
+/* Navigation bar styling */
+#navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background: linear-gradient(white 0%,transparent 100%); 
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 99;
+}
+
+    #navbar ul {
+        list-style: none;
+        padding: 30px;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+
+        #navbar ul li {
+            padding: 15px;
+        }
+            #navbar ul li a {
+                font-family: 'Nanum Gothic Coding', cursive;
+                display: flex;
+                align-items: center;
+                padding: 10px 20px; 
+                border-radius: 12px;            /* Rounded corners */
+                background-color: #333;         /* Background color */
+                color: #fff;                    /* Text color */
+                text-decoration: none;          /* Remove underlines */
+            }
+                #navbar ul li a i {
+                    margin-right: 8px; 
+                }
+
+                /* Add some hover effects */
+                #navbar ul li a:hover {
+                    background: #444;
+                }
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Initial State */
 .nav__button {
     top: 50%;
@@ -80,7 +142,7 @@ body {
     padding: 0;
     border: none;
     border-radius: 50%;
-    background: radial-gradient(circle at center, #FFFFFF 0%,#FFFFFF 20%,#aee2ee 30%,#aee2ee 50%,#FFFFFF 70%,#FFFFFF 100% );
+    background: radial-gradient(circle at center, #FFFFFF 0%,#FFFFFF 20%,transparent 30%,transparent 50%,#FFFFFF 70%,#FFFFFF 100% );
     transition: all 0.5s ease;
     cursor: pointer;
     overflow: hidden;
@@ -106,7 +168,7 @@ body {
     /* Define initial state for submenu buttons */
     .nav__submenu .nav__subbutton {
         opacity: 0;
-        transition: opacity 0.5s, top 0.5s, left 0.5s; /* Add transition */
+        transition: opacity 0.5s, top 0.5s, left 0.5s; 
     }
 
 .nav__subbutton {
@@ -117,7 +179,7 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: radial-gradient(circle at center, #FFFFFF 0%,#FFFFFF 20%,#aee2ee 30%,#aee2ee 50%,#FFFFFF 70%,#FFFFFF 100% );
+    background: radial-gradient(circle at center, #FFFFFF 0%,#FFFFFF 20%,transparent 30%,transparent 50%,#FFFFFF 70%,#FFFFFF 100% );
     color: transparent;
     left: 50%;
     top: 50%;
@@ -147,13 +209,13 @@ body {
 
     /* Add hover effect to submenu buttons */
     .nav__subbutton:hover {
-        width: 200px; /* Increasing size, like you did with the main button */
+        width: 200px; 
         height: 200px;
-        animation: none; /* Remove animation */
+        animation: none; 
     }
 
         .nav__subbutton:hover .nav__subbutton-text {
-            color: var(--primary-text-color); /* Making text visible */
+            color: var(--primary-text-color); 
             font-family: 'Nanum Gothic Coding', cursive;
             font-size: 32px;
         }
