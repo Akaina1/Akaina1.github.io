@@ -44,7 +44,6 @@ body {
     width: 100%;
 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-
 .page__header {
     position: fixed;
     width: 100%;
@@ -95,7 +94,7 @@ body {
     background: linear-gradient(white 0%,transparent 100%); 
     opacity: 0;
     transition: opacity 0.5s ease;
-    z-index: 99;
+    z-index: 10;
 }
 
     #navbar ul {
@@ -249,6 +248,93 @@ body {
         font-size: 32px;
     }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* Sidebar navigation styling */
+#sidebar-nav {
+    position: fixed;
+    top: 150px;
+    left: 0;
+    height: 100%;
+    width: 200px; 
+    background-color: transparent;
+    font-family: 'Nanum Gothic Coding', cursive;
+    font-size: 24px;
+    z-index: 10;
+    transition: left 1s ease-out;
+}
+    /* class for the visible sidebar state */
+    #sidebar-nav.show {
+        left: 0;
+    }
+
+    #sidebar-nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        #sidebar-nav ul li {
+            padding: 16px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+            /* Delay fade-in for each list item */
+            #sidebar-nav ul li:nth-child(1) {
+                transition-delay: 0.5s;
+            }
+
+            #sidebar-nav ul li:nth-child(2) {
+                transition-delay: 1s;
+            }
+
+            #sidebar-nav ul li:nth-child(3) {
+                transition-delay: 1.5s;
+            }
+
+            #sidebar-nav ul li:nth-child(4) {
+                transition-delay: 2s;
+            }
+
+            /* class for the visible list items */
+            #sidebar-nav ul li.show {
+                opacity: 1;
+            }
+
+            #sidebar-nav ul li a {
+                color: #fff;
+                text-decoration: none;
+                display: block;
+                border: 2px solid #fff; /* Add a border */
+                border-radius: 12px; /* Rounded corners */
+                padding: 10px; /* Padding to space out the content */
+                position: relative; /* Make the link relative for positioning the span */
+                transition: background-color 0.5s ease;
+            }
+                #sidebar-nav ul li a::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    border-radius: 12px; /* Rounded corners */
+                    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+                    opacity: 0; /* Initially transparent */
+                    pointer-events: none; /* Let click events pass through */
+                    z-index: -1; /* Place it below the text */
+                    transition: opacity 0.3s ease;
+                }
+
+                #sidebar-nav ul li a:hover::before {
+                    opacity: 1; /* Make it visible */
+                    animation: rippleEffect 0.6s ease-out;
+                }
+
+                #sidebar-nav ul li a:hover {
+                    background-color: #AFAFAF; /* Adjust hover color as needed */
+                }
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 @keyframes growShrink {
     0%, 100% {
         width: 25px;
@@ -282,7 +368,29 @@ body {
         opacity: 1;
     }
 }
+
+@keyframes rippleEffect {
+    0% {
+        transform: scale(0); /* Start from the center */
+    }
+
+    100% {
+        transform: scale(4); /* Scale up */
+        opacity: 0; /* Fade out */
+    }
+}
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*footer*/
+
+.site-footer {
+    background-color: transparent; 
+    color: black;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
