@@ -20,6 +20,17 @@ body {
     text-align: center;
     color: var(--primary-text-color);
     font-family: 'Nanum Gothic Coding', cursive;
+    font-weight: 700;
+    text-shadow: 0 0 10px #5E5F60;
+    animation: fadeIn 2s ease-in-out;
+    overflow: hidden;
+}
+
+.character {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(1em);
+    transition: all 0.75s ease-in-out;
 }
 
 .home__header {
@@ -68,7 +79,7 @@ body {
     padding: 0;
     border: none;
     border-radius: 50%;
-    background: radial-gradient(circle at center, #FFFFFF 0%,#FFFFFF 20%,#aee2ee 30%,#FFFFFF 70%,#FFFFFF 100% );
+    background: radial-gradient(circle at center, #FFFFFF 0%,#FFFFFF 20%,#aee2ee 30%,#aee2ee 50%,#FFFFFF 70%,#FFFFFF 100% );
     transition: all 0.5s ease;
     cursor: pointer;
     overflow: hidden;
@@ -86,13 +97,14 @@ body {
 
 /* Hover State */
 .nav__button:hover {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
 }
 
     .nav__button:hover .nav__button-text {
         color: var(--primary-text-color);
         font-family: 'Nanum Gothic Coding', cursive;
+        font-size: 32px;
     }
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -103,8 +115,18 @@ body {
     }
     
     50% {
-        width: 125px;
-        height: 125px;
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
     }
 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/

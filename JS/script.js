@@ -13,3 +13,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const title = document.getElementById('homeTitle');
+    const text = title.textContent;
+    title.innerHTML = '';
+
+    for (let i = 0; i < text.length; i++) {
+        let character = text[i];
+        let span = document.createElement('span');
+        span.className = 'character';
+        span.textContent = character === ' ' ? '\u00A0' : character;  // Replace ' ' with a non-breaking space
+        title.appendChild(span);
+    }
+
+    const characters = document.querySelectorAll('.character');
+    characters.forEach((character, index) => {
+        setTimeout(() => {
+            character.style.opacity = '1';
+            character.style.transform = 'translateY(0)';
+        }, index * 150);  // 100ms delay between each
+    });
+});
