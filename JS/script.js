@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
     navButton.classList.add('nav__button--initial');
 
     navButton.addEventListener('mouseover', function () {
-        navButton.classList.remove('nav__button--initial');
+        if (submenu.style.display === 'none' || submenu.style.display === '') {
+            navButton.classList.remove('nav__button--initial');
+        }
     });
 
     navButton.addEventListener('mouseout', function () {

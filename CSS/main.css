@@ -1,8 +1,9 @@
 :root {
     --background-color: #DFF8EB;
-    --primary-text-color: #363737;
-    --secondary-text-color: #E3C5CA;
-    --accent-color: #aee2ee;
+    --primary-text-color: #515151;
+    --secondary-text-color: #000000;
+    --accent-color1: #aee2ee;
+    --accent-color2: #E3C5CA;
 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 body {
@@ -21,7 +22,7 @@ body {
     color: var(--primary-text-color);
     font-family: 'Nanum Gothic Coding', cursive;
     font-weight: 700;
-    text-shadow: 0 0 10px #5E5F60;
+    text-shadow: 0 0 10px #696969;
     animation: fadeIn 2s ease-in-out;
     overflow: hidden;
 }
@@ -31,6 +32,16 @@ body {
     opacity: 0;
     transform: translateY(1em);
     transition: all 0.5s ease-in-out;
+}
+
+.text-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    width: 100%;
 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
@@ -43,6 +54,8 @@ body {
 }
 
 .home__nav {
+    width: 300px; 
+    height: 300px; 
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -55,6 +68,10 @@ body {
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Initial State */
 .nav__button {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,13 +84,9 @@ body {
     transition: all 0.5s ease;
     cursor: pointer;
     overflow: hidden;
+    z-index: 2;
 }
 
-.nav__button--activated {
-    width: 250px;
-    height: 250px;
-    animation: none;
-}
 .nav__button--activated {
     width: 250px;
     height: 250px;
@@ -87,6 +100,7 @@ body {
     height: 100%;
     top: 0;
     left: 0;
+    z-index: 1;
 }
 
     /* Define initial state for submenu buttons */
@@ -96,6 +110,9 @@ body {
     }
 
 .nav__subbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     width: 50px;
     height: 50px;
@@ -105,6 +122,8 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+    animation: subGrowShrink 3.5s ease-in-out infinite;
 }
 
     /* Define positions around the circle */
@@ -115,22 +134,41 @@ body {
     }
 
     .nav__submenu.show .nav__subbutton:nth-child(2) {
-        top: 50%;
+        top: 80%;
         left: -40%;
         opacity: 1;
     }
 
     .nav__submenu.show .nav__subbutton:nth-child(3) {
-        top: 50%;
+        top: 80%;
         left: 140%;
         opacity: 1;
     }
 
+    /* Add hover effect to submenu buttons */
+    .nav__subbutton:hover {
+        width: 200px; /* Increasing size, like you did with the main button */
+        height: 200px;
+        animation: none; /* Remove animation */
+    }
+
+        .nav__subbutton:hover .nav__subbutton-text {
+            color: var(--primary-text-color); /* Making text visible */
+            font-family: 'Nanum Gothic Coding', cursive;
+            font-size: 32px;
+        }
 
 .nav__button-text {
     font-size: 20px;
     color: transparent;
     transition: color 0.5s ease;
+}
+
+.nav__subbutton-text {
+    font-size: 20px;
+    color: var(--primary-text-color);
+    transition: color 0.5s ease;
+    font-family: 'Nanum Gothic Coding', cursive;
 }
 
 .nav__button--initial {
@@ -158,6 +196,18 @@ body {
     50% {
         width: 150px;
         height: 150px;
+    }
+}
+
+@keyframes subGrowShrink {
+    0%, 100% {
+        width: 120px;
+        height: 120px;
+    }
+
+    50% {
+        width: 200px;
+        height: 200px;
     }
 }
 
