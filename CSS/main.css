@@ -1,16 +1,112 @@
+:root {
+    --background-color: #DFF8EB;
+    --primary-text-color: #363737;
+    --secondary-text-color: #E3C5CA;
+    --accent-color: #aee2ee;
+}
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 body {
     height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(to top left, #28b487, #7dd56f);
+    background: linear-gradient(to top left, #E3C5CA 0%,#E3C5CA 20%,#aee2ee 40%,#aee2ee 50%,#E3C5CA 70%,#E3C5CA 100% );
 }
-
-h1 {
-    font-family: sans-serif;
-    font-size: 50px;
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.home__title {
+    position: absolute;
+    font-size: 80px;
     line-height: 1.3;
     width: 100%;
-    padding: 30px;
     text-align: center;
-    color: white;
+    color: var(--primary-text-color);
+    font-family: 'Nanum Gothic Coding', cursive;
 }
+
+.home__header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin-top: 65px;
+}
+
+.home__nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    margin: auto;
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.nav__bar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-bottom: 10px;
+    background-color: var(--background-color)
+}
+.nav__bar ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    margin: auto;
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
+.nav__button {
+    width: 40px; /* Circle dimensions */
+    height: 40px;
+    padding: 10px; /* Padding to keep text inside */
+    border-radius: 50%; /* Make it a circle */
+    background-color: var(--primary-text-color); /* Background color */
+    color: transparent; /* Make text transparent initially */
+    font-size: 20px; /* Set font size */
+    text-align: center;
+    line-height: 40px; /* Align the text vertically */
+    transition: all 0.5s ease; /* Transition settings */
+}
+
+
+    .nav__button:hover {
+        width: 100px; /* Increase dimensions */
+        height: 100px;
+        line-height: 100px; /* Adjust line height to new dimensions */
+        color: var(--primary-text-color); /* Make text visible */
+    }
+
+    .nav__button--initial {
+        width: 0;
+        height: 0;
+        line-height: 0;
+        padding: 0;
+        color: transparent; /* Make text transparent initially */
+        animation: loadAnimation 0.5s ease forwards;
+    }
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@keyframes loadAnimation {
+    0% {
+        width: 0;
+        height: 0;
+        line-height: 0;
+        padding: 0;
+    }
+
+    100% {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        padding: 10px;
+    }
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
