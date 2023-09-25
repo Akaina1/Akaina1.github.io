@@ -116,6 +116,139 @@ body {
     height: auto;
     display: block; 
 }
+
+/* Search Bar Styles */
+.search__container {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    margin: 15px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centers the container */
+    animation: fadeIn 3s ease-in;
+}
+
+.search__container input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    box-shadow: 0 0 10px rgb(70, 70, 70);
+    transition: box-shadow 0.3s ease;
+}
+
+    .search__container input:focus {
+        box-shadow: 0 4px 8px rgb(70, 70, 70);
+        outline: none;
+    }
+
+.search__container i {
+    margin-left: 10px;
+    color: #888;
+}
+
+/* Project Categories Styles */
+.project__categories {
+    display: flex;
+    align-items: center;
+    gap: 150px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centers the container */
+}
+
+.category__container {
+    position: relative; 
+}
+
+.category__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgb(70, 70, 70);
+    border-style: solid;
+    border-color: var(--primary-text-color);
+    animation: fadeIn 3s ease-in;
+}
+
+    .category__icon.hobby {
+        /* Background Image */
+        background-image: url('https://as2.ftcdn.net/v2/jpg/02/18/72/73/1000_F_218727336_yFWOEXi4dqc01tCWSNZg2JSa0TPHtz4h.jpg');
+    }
+
+    .category__icon.school {
+        /* Background Image */
+        background-image: url('https://media.istockphoto.com/id/973074712/photo/teenagers-develop-programming-with-blueprint-code-in-laptop-monitor.jpg?s=612x612&w=0&k=20&c=2yZd2w2q75pxg0I_RJjgGojqkii_gc5vTpkVOVAfM00=');
+    }
+
+    .category__icon:hover .category__label {
+        color: var(--secondary-text-color);
+    }
+    .category__icon:hover {
+        box-shadow: 0 0 30px rgb(0, 0, 0); /* Intensify the shadow for example */
+    }
+
+.category__label {
+    position: absolute;
+    top: 100%; 
+    width: 100%;
+    text-align: center;
+    margin-top: 50px; 
+    font-weight: bold;
+    color: var(--accent-text-color);
+    font-size: 24px;
+}
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Modal Styles*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-visible {
+    display: block !important; /* The use of !important is just for this test */
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close-btn:hover, .close-btn:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .page__title {
     position: absolute;
@@ -228,22 +361,25 @@ body {
         padding: 30px;
         margin: 0;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         
     }
 
         #navbar ul li {
-            padding: 15px;           
+            padding: 10px;           
         }
+
             #navbar ul li a {
                 font-family: 'Nanum Gothic Coding', cursive;
                 display: flex;
                 align-items: center;
                 padding: 10px 20px;
-                border-radius: 12px; 
-                background-color: var(--primary-text-color); 
-                color: var(--secondary-text-color); 
-                text-decoration: none; 
+                border-radius: 12px;
+                background-color: var(--primary-text-color);
+                color: var(--accent-text-color);
+                text-decoration: none;
+                border-style: solid;
+                border-color: var(--accent-text-color);
             }
                 #navbar ul li a i {
                     margin-right: 8px; 
@@ -251,15 +387,17 @@ body {
 
                 /* Add some hover effects */
                 #navbar ul li a:hover {
-                    color: #8B8B8B;
+                    color: var(--secondary-text-color);
+                    border-style: solid;
+                    border-color: #000000;
                 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Initial State */
 .nav__button {
-    top: 70%;
+    top: 57%;
     left: 50%;
     transform: translate(-50%, -50%);
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -274,6 +412,7 @@ body {
     overflow: hidden;
     z-index: 2;
     box-shadow: 0 0 10px #868686;
+    transform: translate(-50%, -50%); /* centers the container */
 }
 
 .nav__button--activated {

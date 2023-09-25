@@ -151,3 +151,44 @@ async function animateTitlesAndSubtitles() {
         }
     }
 }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Modal functions
+document.addEventListener("DOMContentLoaded", function () {
+    // 1. Open Modal Logic
+    document.querySelectorAll('.category__container').forEach(container => {
+        container.addEventListener('click', function (e) {
+            const modalID = e.currentTarget.getAttribute('data-modal');
+            const modal = document.querySelector(`#${modalID}`);
+            if (modal) {
+                modal.classList.add('modal-visible');
+            }
+        });
+    });
+
+    // 2. Close Modal Logic
+    document.querySelectorAll('.modal .close-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const modal = this.closest('.modal');
+            if (modal) {
+                modal.classList.remove('modal-visible');
+            }
+        });
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.classList.remove('modal-visible');
+            });
+        }
+    });
+
+    // Optional: Close modal when clicking outside of modal content
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.addEventListener('click', function (e) {
+            if (e.target === this) {
+                modal.classList.remove('modal-visible');
+            }
+        });
+    });
+});
