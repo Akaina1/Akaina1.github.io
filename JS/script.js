@@ -137,14 +137,26 @@ async function animateTitlesAndSubtitles() {
     const pageTitle = document.querySelector('.page__title');
     const pageSubtitle = document.querySelector('.page__subtitle');
 
-    prepareForAnimation(pageTitle);
-    prepareForAnimation(pageSubtitle);
+    let titleDuration = 0;
 
-    const titleDuration = startAnimation(pageTitle);
-    setTimeout(() => {
-        startAnimation(pageSubtitle);
-    }, titleDuration);
+    // Check if the pageTitle element actually exists on this page
+    if (pageTitle) {
+        prepareForAnimation(pageTitle);
+        titleDuration = startAnimation(pageTitle);
+    }
+
+    // Check if the pageSubtitle element actually exists on this page
+    if (pageSubtitle) {
+        prepareForAnimation(pageSubtitle);
+
+        if (pageTitle) {
+            // Wait for the pageTitle animation to finish
+            setTimeout(() => {
+                startAnimation(pageSubtitle);
+            }, titleDuration);
+        } else {
+            // No pageTitle to wait for, start immediately
+            startAnimation(pageSubtitle);
+        }
+    }
 }
-
-
-
