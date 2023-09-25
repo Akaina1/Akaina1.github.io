@@ -10,7 +10,7 @@ body {
     height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(to top left, #E3C5CA 0%,#E3C5CA 20%,#aee2ee 40%,#aee2ee 50%,#E3C5CA 70%,#E3C5CA 100% );
+    background: linear-gradient(to top left, #E4A9B2 0%,#E4A9B2 20%,#7fc2d0 40%,#7fc2d0 50%,#E4A9B2 70%,#E4A9B2 100% );
 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /*Containers*/
@@ -26,7 +26,7 @@ body {
     padding: 20px;
     border-radius: 50px;
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.1);
     font-family: 'Poppins', sans-serif;
     font-size: 22px;
     animation: fadeIn 3s ease-in;
@@ -57,7 +57,6 @@ body {
 
 .about-container h2 {
     font-size: 28px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
 }
 
@@ -67,10 +66,10 @@ body {
     width: 65%;
     height: 65%;
     padding: 20px;
+    border-radius: 50px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Poppins', sans-serif;
-    border-radius: 10px;
     animation: fadeIn 3s ease-in;
 }
 
@@ -80,7 +79,6 @@ body {
 
 .contact-form-container h2 {
     font-size: 28px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
 }
 
@@ -339,7 +337,7 @@ position: absolute;
         }
 
 .nav__button-text {
-    font-size: 20px;
+    font-size: 24px;
     color: transparent;
     transition: color 0.5s ease;
 }
@@ -421,12 +419,12 @@ position: absolute;
             }
 
             #sidebar-nav ul li a {
-                color: #fff;
+                color: #4F4F4F;
                 text-decoration: none;
                 display: block;
-                border: 2px solid #fff; 
-                border-radius: 12px; 
-                padding: 10px; 
+                border: 2px solid #4F4F4F;
+                border-radius: 12px;
+                padding: 10px;
                 position: relative;
                 transition: background-color 0.5s ease;
             }
@@ -451,8 +449,9 @@ position: absolute;
                 }
 
                 #sidebar-nav ul li a:hover {
-                    color: var(--primary-text-color);
-                    background-color: #A7E4C3; 
+                    color: #000000;
+                    background-color: #A7E4C3;
+                    border: 2px solid #000000;
                 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 @keyframes growShrink {
@@ -469,8 +468,8 @@ position: absolute;
 
 @keyframes subGrowShrink {
     0%, 100% {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
     }
 
     50% {
