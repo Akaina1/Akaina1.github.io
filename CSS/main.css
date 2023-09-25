@@ -1,6 +1,6 @@
 :root {
     --background-color: #EBC7CE;
-    --primary-text-color: #A7E4C3;
+    --primary-text-color: #9BE2BC;
     --secondary-text-color: #000000;
     --accent-text-color: #808080;
 }
@@ -15,39 +15,46 @@ body {
 /*Containers*/
 
 /* About Me container styling */
-.about-container {
+.about-container-wrapper {
     position: fixed;
-    top: 17%;
+    top: 18%;
     left: 20%;
-    margin: auto;
     width: 65%;
-    height: 65%;
-    padding: 20px;
+    height: 75%;
     border-radius: 50px;
-    background-color: #fff;
-    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.1);
-    font-family: 'Poppins', sans-serif;
-    font-size: 22px;
+    border: 5px solid var(--primary-text-color);
+    overflow: hidden;
+    box-shadow: 0 0 20px rgb(70, 70, 70);
     animation: fadeIn 3s ease-in;
-    overflow-y: auto;
-
-    /* Scrollbar Styling Firefox */
-    scrollbar-width: thin;
-    scrollbar-color: #888 #fff;
 }
 
-        /* Formatting For Chrome, Safari, and Opera */
-        .about-container::-webkit-scrollbar {
-            width: 10px;
-        }
+/* Inner container */
+.about-container {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box; 
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    overflow-y: auto; 
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-text-color) #fff;
+}
 
-        .about-container::-webkit-scrollbar-thumb {
-            background: #888;
-        }
+    /* Formatting for Chrome, Safari, and Opera */
+    .about-container::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .about-container::-webkit-scrollbar-thumb {
+        background: var(--primary-text-color);
+    }
 
         .about-container::-webkit-scrollbar-thumb:hover {
-            background: #555;
+            background: var(--primary-text-color);
         }
+
 
 /* Individual section styling */
 .about-container section {
@@ -67,7 +74,7 @@ body {
     padding: 20px;
     border-radius: 50px;
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgb(70, 70, 70);
     font-family: 'Poppins', sans-serif;
     animation: fadeIn 3s ease-in;
 }
@@ -91,13 +98,17 @@ body {
 /*profile picture container*/
 .profile-pic-container {
     position: fixed;
-    top: 5%;
+    top: 4%;
     left: 75%;
     width: 150px;
     height: 150px;
     border-radius: 50%;
     overflow: hidden;
     animation: fadeIn 3s ease-in;
+    border-color: var(--primary-text-color);
+    border-style: solid;
+    border-width: 5px;
+    box-shadow: 0 0 20px rgb(70, 70, 70);
 }
 
 .profile-pic {
@@ -114,8 +125,8 @@ body {
     text-align: center;
     color: var(--primary-text-color);
     font-family: 'Nanum Gothic Coding', cursive;
-    font-weight: 700;
-    text-shadow: 0 0 15px #383838;
+    font-weight: 800;
+    text-shadow: 0 0 10px rgb(0, 0, 0);
     animation: fadeIn 2s ease-in-out;
     overflow: hidden;
 }
@@ -155,7 +166,7 @@ body {
     color: var(--primary-text-color);
     font-family: 'Nanum Gothic Coding', cursive;
     font-weight: 700;
-    text-shadow: 0 0 10px #323232;
+    text-shadow: 0 0 10px rgb(0, 0, 0);
     overflow: hidden;
 }
 
@@ -230,7 +241,7 @@ body {
                 align-items: center;
                 padding: 10px 20px;
                 border-radius: 12px; 
-                background-color: #A7E4C3; 
+                background-color: var(--primary-text-color); 
                 color: var(--secondary-text-color); 
                 text-decoration: none; 
             }
@@ -269,7 +280,7 @@ body {
     width: 250px;
     height: 250px;
     animation: none;
-    background: radial-gradient(circle at center, #A7E4C3 0%,#A7E4C3 20%,transparent 30%,transparent 50%,#A7E4C3 70%,#A7E4C3 100% );
+    background: radial-gradient(circle at center, var(--primary-text-color) 0%,var(--primary-text-color) 20%,transparent 30%,transparent 50%,var(--primary-text-color) 70%,var(--primary-text-color) 100% );
 }
 
 .nav__submenu {
@@ -303,6 +314,7 @@ body {
     transform: translate(-50%, -50%);
     transition: all 0.5s ease;
     animation: subGrowShrink 3.5s ease-in-out infinite;
+    box-shadow: 0 0 10px #868686;
 }
 
     /* Define positions around the circle */
@@ -329,7 +341,7 @@ body {
         width: 260px;
         height: 260px;
         animation: none;
-        background: radial-gradient(circle at center, #A7E4C3 0%,#A7E4C3 20%,transparent 30%,transparent 50%,#A7E4C3 70%,#A7E4C3 100% );
+        background: radial-gradient(circle at center, var(--primary-text-color) 0%,var(--primary-text-color) 20%,transparent 30%,transparent 50%,var(--primary-text-color) 70%,var(--primary-text-color) 100% );
     }
 
         .nav__subbutton:hover .nav__subbutton-text {
@@ -366,7 +378,7 @@ body {
 .nav__button:hover {
     width: 250px;
     height: 250px;
-    background: radial-gradient(circle at center, #A7E4C3 0%,#A7E4C3 20%,transparent 30%,transparent 50%,#A7E4C3 70%,#A7E4C3 100% );
+    background: radial-gradient(circle at center, var(--primary-text-color) 0%,var(--primary-text-color) 20%,transparent 30%,transparent 50%,var(--primary-text-color) 70%,var(--primary-text-color) 100% );
 }
 
     .nav__button:hover .nav__button-text {
@@ -460,7 +472,7 @@ body {
 
                 #sidebar-nav ul li a:hover {
                     color: #000000;
-                    background-color: #A7E4C3;
+                    background-color: var(--primary-text-color);
                     border: 2px solid #000000;
                 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
