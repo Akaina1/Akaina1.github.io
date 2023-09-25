@@ -76,10 +76,10 @@ document.addEventListener("DOMContentLoaded", function () {
     navbar.addEventListener('mouseover', function () {
         clearTimeout(timer);
     });
+});
 
-    // Text Animation for page titles
-    const pageTitles = document.querySelectorAll('.page__title');
-    pageTitles.forEach(animateTitle);
+document.addEventListener("DOMContentLoaded", function () {
+    animateTitlesAndSubtitles();
 });
 ////////////////////////////////////////////////////////////////////////////////////////
 // sidebar
@@ -104,23 +104,47 @@ if (window.location.pathname !== '/index.html') {
 };
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Functions
-function animateTitle(titleElement) {
+function prepareForAnimation(titleElement) {
     const text = titleElement.textContent;
     titleElement.innerHTML = '';
+    titleElement.style.opacity = '0'; // Hide it
 
     for (let i = 0; i < text.length; i++) {
         let character = text[i];
         let span = document.createElement('span');
         span.className = 'character';
-        span.textContent = character === ' ' ? '\u00A0' : character; // Replace ' ' with a non-breaking space
+        span.style.opacity = '0';  // Keep it hidden
+        span.textContent = character === ' ' ? '\u00A0' : character;
         titleElement.appendChild(span);
     }
+}
+
+function startAnimation(titleElement, delay = 0) {
+    titleElement.style.opacity = '1'; // Show it
 
     const characters = titleElement.querySelectorAll('.character');
     characters.forEach((character, index) => {
         setTimeout(() => {
             character.style.opacity = '1';
             character.style.transform = 'translateY(0)';
-        }, index * 100); // 100ms delay between each
+        }, delay + index * 100);
     });
-};
+
+    return titleElement.textContent.length * 100;
+}
+
+async function animateTitlesAndSubtitles() {
+    const pageTitle = document.querySelector('.page__title');
+    const pageSubtitle = document.querySelector('.page__subtitle');
+
+    prepareForAnimation(pageTitle);
+    prepareForAnimation(pageSubtitle);
+
+    const titleDuration = startAnimation(pageTitle);
+    setTimeout(() => {
+        startAnimation(pageSubtitle);
+    }, titleDuration);
+}
+
+
+
