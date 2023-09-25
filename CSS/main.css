@@ -1,16 +1,15 @@
 :root {
-    --background-color: #DFF8EB;
-    --primary-text-color: #515151;
+    --background-color: #EBC7CE;
+    --primary-text-color: #A7E4C3;
     --secondary-text-color: #000000;
-    --accent-color1: #aee2ee;
-    --accent-color2: #E3C5CA;
+    --accent-text-color: #808080;
 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 body {
     height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(to top left, #E4A9B2 0%,#E4A9B2 20%,#7fc2d0 40%,#7fc2d0 50%,#E4A9B2 70%,#E4A9B2 100% );
+    background: var(--background-color);
 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /*Containers*/
@@ -116,7 +115,7 @@ body {
     color: var(--primary-text-color);
     font-family: 'Nanum Gothic Coding', cursive;
     font-weight: 700;
-    text-shadow: 0 0 10px #696969;
+    text-shadow: 0 0 15px #383838;
     animation: fadeIn 2s ease-in-out;
     overflow: hidden;
 }
@@ -147,16 +146,16 @@ body {
 }
 
 .page__subtitle {
-position: absolute;
+    position: absolute;
     top: 120px;
-    font-size: 40px;
+    font-size: 50px;
     line-height: 1.3;
     width: 100%;
     text-align: center;
     color: var(--primary-text-color);
     font-family: 'Nanum Gothic Coding', cursive;
     font-weight: 700;
-    text-shadow: 0 0 10px #696969;
+    text-shadow: 0 0 10px #323232;
     overflow: hidden;
 }
 
@@ -195,7 +194,7 @@ position: absolute;
 
 .dropdown-text {
     margin-left: 8px; 
-    font-size: 24px; /
+    font-size: 24px; 
     color: #000; 
 }
 
@@ -232,7 +231,7 @@ position: absolute;
                 padding: 10px 20px;
                 border-radius: 12px; 
                 background-color: #A7E4C3; 
-                color: var(--primary-text-color); 
+                color: var(--secondary-text-color); 
                 text-decoration: none; 
             }
                 #navbar ul li a i {
@@ -246,7 +245,7 @@ position: absolute;
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Initial State */
 .nav__button {
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
@@ -263,12 +262,14 @@ position: absolute;
     cursor: pointer;
     overflow: hidden;
     z-index: 2;
+    box-shadow: 0 0 10px #868686;
 }
 
 .nav__button--activated {
     width: 250px;
     height: 250px;
     animation: none;
+    background: radial-gradient(circle at center, #A7E4C3 0%,#A7E4C3 20%,transparent 30%,transparent 50%,#A7E4C3 70%,#A7E4C3 100% );
 }
 
 .nav__submenu {
@@ -306,32 +307,33 @@ position: absolute;
 
     /* Define positions around the circle */
     .nav__submenu.show .nav__subbutton:nth-child(1) {
-        top: -30%;
+        top: -8%;
         left: 50%;
         opacity: 1;
     }
 
     .nav__submenu.show .nav__subbutton:nth-child(2) {
-        top: 80%;
+        top: 100%;
         left: -40%;
         opacity: 1;
     }
 
     .nav__submenu.show .nav__subbutton:nth-child(3) {
-        top: 80%;
+        top: 100%;
         left: 140%;
         opacity: 1;
     }
 
     /* Add hover effect to submenu buttons */
     .nav__subbutton:hover {
-        width: 200px; 
-        height: 200px;
-        animation: none; 
+        width: 260px;
+        height: 260px;
+        animation: none;
+        background: radial-gradient(circle at center, #A7E4C3 0%,#A7E4C3 20%,transparent 30%,transparent 50%,#A7E4C3 70%,#A7E4C3 100% );
     }
 
         .nav__subbutton:hover .nav__subbutton-text {
-            color: var(--primary-text-color); 
+            color: var(--secondary-text-color);
             font-family: 'Nanum Gothic Coding', cursive;
             font-size: 32px;
         }
@@ -342,9 +344,16 @@ position: absolute;
     transition: color 0.5s ease;
 }
 
+    .activated-text {
+        color: var(--accent-text-color);
+        font-family: 'Nanum Gothic Coding', cursive;
+        font-size: 32px;
+    }
+
+
 .nav__subbutton-text {
     font-size: 20px;
-    color: var(--primary-text-color);
+    color: var(--accent-text-color);
     transition: color 0.5s ease;
     font-family: 'Nanum Gothic Coding', cursive;
 }
@@ -357,10 +366,11 @@ position: absolute;
 .nav__button:hover {
     width: 250px;
     height: 250px;
+    background: radial-gradient(circle at center, #A7E4C3 0%,#A7E4C3 20%,transparent 30%,transparent 50%,#A7E4C3 70%,#A7E4C3 100% );
 }
 
     .nav__button:hover .nav__button-text {
-        color: var(--primary-text-color);
+        color: var(--secondary-text-color);
         font-family: 'Nanum Gothic Coding', cursive;
         font-size: 32px;
     }
@@ -468,13 +478,13 @@ position: absolute;
 
 @keyframes subGrowShrink {
     0%, 100% {
-        width: 150px;
-        height: 150px;
+        width: 170px;
+        height: 170px;
     }
 
     50% {
-        width: 200px;
-        height: 200px;
+        width: 220px;
+        height: 220px;
     }
 }
 

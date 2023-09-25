@@ -29,26 +29,17 @@ if (window.location.pathname === '/index.html' || window.location.pathname === '
                 submenu.style.display = 'block';
                 mainButton.classList.remove('nav__button--initial');
                 mainButton.classList.add('nav__button--activated');
-
-                // Update text style when activated
-                mainButtonText.style.color = 'var(--primary-text-color)';
-                mainButtonText.style.fontFamily = "'Nanum Gothic Coding', cursive";
-                mainButtonText.style.fontSize = '32px';
-
+                mainButtonText.classList.add('activated-text');
                 submenu.classList.add('show');
             } else {
                 submenu.style.display = 'none';
                 mainButton.classList.remove('nav__button--activated');
                 mainButton.classList.add('nav__button--initial');
-
-                // Revert text style when deactivated
-                mainButtonText.style.color = 'transparent';
-                mainButtonText.style.fontFamily = '';
-                mainButtonText.style.fontSize = '20px';
-
+                mainButtonText.classList.remove('activated-text');
                 submenu.classList.remove('show');
             }
         });
+
     });
 };
 ////////////////////////////////////////////////////////////////////////////////////////
