@@ -63,11 +63,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Event Listener to show navbar on hover over dropdown icon
     dropdownIcon.addEventListener('mouseover', function () {
         navbar.style.opacity = '1';
+        navbar.classList.add('active');
     });
 
     // Event Listener to hide navbar on mouseleave
     navbar.addEventListener('mouseleave', function () {
         navbar.style.opacity = '0';
+        navbar.classList.remove('active');
     });
 
     // Event Listener to cancel timer if mouse is back in navbar

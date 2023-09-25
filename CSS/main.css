@@ -13,6 +13,81 @@ body {
     background: linear-gradient(to top left, #E3C5CA 0%,#E3C5CA 20%,#aee2ee 40%,#aee2ee 50%,#E3C5CA 70%,#E3C5CA 100% );
 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Containers*/
+
+/* About Me container styling */
+.about-container {
+    margin: auto;
+    width: 65%;
+    height: 65%;
+    padding: 20px;
+    border-radius: 50px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    animation: fadeIn 3s ease-in;
+}
+
+/* Individual section styling */
+.about-container section {
+    margin-bottom: 20px;
+}
+
+.about-container h2 {
+    font-size: 28px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+/* Contact Form Container styling */
+.contact-form-container {
+    margin: auto;
+    width: 65%;
+    height: 65%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+    animation: fadeIn 3s ease-in;
+}
+
+.contact-form-container section {
+    margin-bottom: 20px;
+}
+
+.contact-form-container h2 {
+    font-size: 28px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.contact-form-container a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 28px;
+}
+
+/*profile picture container*/
+.profile-pic-container {
+    top: -530px;
+    left: 70%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    animation: fadeIn 3s ease-in;
+}
+
+.profile-pic {
+    width: 100%;
+    height: auto;
+    display: block; /* Removes any default margins or padding */
+}
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .page__title {
     position: absolute;
     font-size: 80px;
@@ -70,6 +145,12 @@ body {
     display: none;
 }
 
+/* When the navbar is active, make everything clickable and visible */
+#navbar.active {
+    pointer-events: auto;
+    visibility: visible;
+}
+
 /* Dropdown icon styling */
 #dropdown-icon {
     position: fixed;
@@ -95,6 +176,8 @@ body {
     opacity: 0;
     transition: opacity 0.5s ease;
     z-index: 10;
+    pointer-events: none;
+    visibility: hidden;
 }
 
     #navbar ul {
@@ -103,20 +186,21 @@ body {
         margin: 0;
         display: flex;
         justify-content: space-around;
+        
     }
 
         #navbar ul li {
-            padding: 15px;
+            padding: 15px;           
         }
             #navbar ul li a {
                 font-family: 'Nanum Gothic Coding', cursive;
                 display: flex;
                 align-items: center;
-                padding: 10px 20px; 
-                border-radius: 12px;            /* Rounded corners */
-                background-color: #333;         /* Background color */
-                color: #fff;                    /* Text color */
-                text-decoration: none;          /* Remove underlines */
+                padding: 10px 20px;
+                border-radius: 12px; /* Rounded corners */
+                background-color: #A7E4C3; /* Background color */
+                color: var(--primary-text-color); /* Text color */
+                text-decoration: none; /* Remove underlines */
             }
                 #navbar ul li a i {
                     margin-right: 8px; 
@@ -124,7 +208,7 @@ body {
 
                 /* Add some hover effects */
                 #navbar ul li a:hover {
-                    background: #444;
+                    color: #8B8B8B;
                 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Initial State */
@@ -251,7 +335,7 @@ body {
 /* Sidebar navigation styling */
 #sidebar-nav {
     position: fixed;
-    top: 150px;
+    top: 200px;
     left: 0;
     height: 100%;
     width: 200px; 
@@ -332,7 +416,8 @@ body {
                 }
 
                 #sidebar-nav ul li a:hover {
-                    background-color: #AFAFAF; /* Adjust hover color as needed */
+                    color: var(--primary-text-color);
+                    background-color: #A7E4C3; /* Adjust hover color as needed */
                 }
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 @keyframes growShrink {
