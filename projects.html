@@ -57,61 +57,302 @@
         <h1 class="page__title" id="pageTitle">My Projects</h1>
 
         <!-- Search Bar -->
-        <div class="search__container">
+        <!--<div class="search__container">
             <input type="text" id="projectSearch" placeholder="Search Projects...">
             <i class="fas fa-search"></i>
-        </div>
+        </div>-->
     </div>
+
 
     <!-- Modal for Hobby Projects -->
     <div class="modal__container" data-modal="hobbyProjectsModal">
         <div id="hobbyProjectsModal" class="modal">
             <div class="modal-content">
-                <span class="close-btn">&times;</span>
-                <h2>Hobby Projects</h2>
-                <!-- Example project inside the modal -->
-                <div class="project-item">
+                <span class="close-btn close-main-modal">&times;</span>
+                <h2 class="modal-title">Hobby Projects</h2>
+
+                <!-- project 1: Adventure Game -->
+                <div class="project-item" data-detail-modal="adventureGameModal">
                     <div class="project-icon">
-                        <!-- Place project's main icon image here -->
+                        <i id="defaultIcon" class="fa-solid fa-gamepad"></i>
                     </div>
-                    <h3>Project Title</h3>
+                    <h3>Adventure Game</h3>
                     <div class="project-tech">
-                        <!-- Icons for the programming languages/frameworks go here -->
+                        <i id="iconsTogether" class="fa-solid fa-c"></i>
+                        <i id="iconsTogether"class="fa-solid fa-plus"></i>
+                        <i id="iconsTogether"class="fa-solid fa-plus"></i>
                     </div>
                 </div>
-                <!-- Repeat .project-item for other projects -->
+
+                <!-- project 2: Business Management System -->
+                <div class="project-item" data-detail-modal="businessManagementModal">
+                    <div class="project-icon">
+                        <i id="defaultIcon" class="fa-solid fa-terminal"></i>
+                    </div>
+                    <h3>Business Management System</h3>
+                    <div class="project-tech">
+                        <i id="iconsTogether" class="fa-solid fa-c"></i>
+                        <i id="iconsTogether" class="fa-solid fa-hashtag"></i>
+                    </div>
+                </div>
+
+                <!-- project 3: Portfolio Site -->
+                <div class="project-item" data-detail-modal="portfolioModal">
+                    <div class="project-icon">
+                        <i id="defaultIcon" class="fa-regular fa-window-maximize"></i>
+                    </div>
+                    <h3>Portfolio Website</h3>
+                    <div class="project-tech">
+                        <i class="fab fa-html5"></i>
+                        <i class="fab fa-css3-alt"></i>
+                        <i class="fab fa-js"></i>
+                    </div>
+                </div>
+
+                <!-- You can repeat .project-item for other projects as you wish -->
             </div>
         </div>
     </div>
 
+
+    <!-- Detail Modal for Adventure Game -->
+    <div class="modal__container detail-modal" id="adventureGameModal">
+        <div class="modal">
+            <div class="detail-modal-content">
+                <span class="close-btn close-detail-modal">&times;</span>
+                <h2>Todo App Details</h2>
+                <hr>
+                <h3>About the Project</h3>
+                <p>
+                    This was one of my earliest projects that I created from scratch.  This is a stylized text adventure game that I created using C++.  The game is a
+                    simple text based adventure game that allows the user to explore a dungeon and fight monsters.  This all runs in the windows console, in the future
+                    I may update this project to have a GUI.
+                </p>
+                <hr>
+                <h3>Key Takeaways</h3>
+                <p>
+                    This project was my starting point for most of my programming knowledge. Learning a language like C++ was a great way to learn the fundamentals 
+                    of programming and how to think like a programmer.  Understanding how basic functions work and how memory managment works was a great way to 
+                    learn how to program.  This project made me realize the importance of planning and designing a project before starting to code.  I had many 
+                    issues refactoring the project because I had not thought of the data structures I was going to use before starting to code.
+                </p>
+                <hr>
+                <h3>Project Links</h3>
+                <a href="https://github.com/Akaina1/Adventure-Game" target="_blank">
+                    <i class="fab fa-github"></i> Github Repo Link
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail Modal for Business Management System -->
+    <div class="modal__container detail-modal" id="businessManagementModal">
+        <div class="modal">
+            <div class="detail-modal-content">
+                <span class="close-btn close-detail-modal">&times;</span>
+                <h2>Personal Blog Details</h2>
+                <hr>
+                <h3>About the Project</h3>
+                <p>
+                    This was a project I took on as a final project after learning C#.  It is a simple business management system that allows users to manage their
+                    inventory, Expenses, Sales, and Marketing.  This was the first project I decided to use an external library to manipualte and store data. I used
+                    CSVHelper to read and write data to CSV files.
+                </p>
+                <hr>
+                <h3>Key Takeaways</h3>
+                <p>
+                    This Project was the first time I had wanted to work on a system to store data from the program.  I decided to use CSV files as it was a simple
+                    way to store data and I was able to find a library that made it easy to read and write to CSV files.  This project was a great way to learn about
+                    how to load and save data to files on the users system.  I plan to update this project into a web application using the knowledge I have gained.
+                </p>
+                <hr>
+                <h3>Project Links</h3>
+                <a href="https://github.com/Akaina1/Csharp-Final-Project" target="_blank">
+                    <i class="fab fa-github"></i> Github Repo Link
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail Modal for Portfolio Website -->
+    <div class="modal__container detail-modal" id="portfolioModal">
+        <div class="modal">
+            <div class="detail-modal-content">
+                <span class="close-btn close-detail-modal">&times;</span>
+                <h2>Portfolio Website</h2>
+                <hr>
+                <h3>About the Project</h3>
+                <p>
+                    This was my latest project after learning HTML, CSS, and JavaScript in my courses as well as taking external courses.  This acts as my personal
+                    portfolio that I can use to showcase my projects and skills.  This project will be continually updated as I learn new skills and create new projects.
+                </p>
+                <hr>
+                <h3>Key Takeaways</h3>
+                <p>
+                    I believe this was my favourite project overall as it really let me put my creativity to use.  I was able to use my knowledge of HTML, CSS, and
+                    JavaScript to create a website that I can be proud to show to others.  I was able to use my knowledge of CSS to create a responsive website with
+                    fluid animations and a clean design.  I was also able to use my knowledge of JavaScript to create a dynamic website that allows users to interact
+                    with the website and view my projects.  This project really helped me solidify my knowledge of how web design works and the many factors that go
+                    into creating visually appealing websites.
+                </p>
+                <hr>
+                <h3>Project Links</h3>
+                <a href="https://github.com/Akaina1/Akaina1.github.io" target="_blank">
+                    <i class="fab fa-github"></i> Github Repo Link
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal for School Projects -->
     <div class="modal__container" data-modal="schoolProjectsModal">
         <div id="schoolProjectsModal" class="modal">
             <div class="modal-content">
                 <span class="close-btn">&times;</span>
-                <h2>School Projects</h2>
-                <!-- Example project inside the modal -->
-                <div class="project-item">
+                <h2 class="modal-title">School Projects</h2>
+
+                <!-- project 1: Bankist-->
+                <div class="project-item" data-detail-modal="bankistModal">
                     <div class="project-icon">
-                        <!-- Place project's main icon image here -->
+                        <img src="IMG\bankist-icon.PNG" alt="Alternate Text" />
                     </div>
-                    <h3>Project Title</h3>
+                    <h3>Bankist Web Application</h3>
                     <div class="project-tech">
-                        <!-- Icons for the programming languages/frameworks go here -->
+                        <i class="fab fa-html5"></i>
+                        <i class="fab fa-css3-alt"></i>
+                        <i class="fab fa-js"></i>
                     </div>
                 </div>
-                <!-- Repeat .project-item for other projects -->
+
+                <!--  project 2: Mapty -->
+                <div class="project-item" data-detail-modal="maptyModal">
+                    <div class="project-icon">
+                        <img src="IMG\mapty-icon.PNG" alt="Alternate Text" />
+                    </div>
+                    <h3>Mapty Web Application</h3>
+                    <div class="project-tech">
+                        <i class="fab fa-html5"></i>
+                        <i class="fab fa-css3-alt"></i>
+                        <i class="fab fa-js"></i>
+                    </div>
+                </div>
+
+                <!--  project 2: Forkify -->
+                <div class="project-item" data-detail-modal="forkifyModal">
+                    <div class="project-icon">
+                        <img src="IMG\forkify-icon.PNG" alt="Alternate Text" />
+                    </div>
+                    <h3>Forkify Web Application</h3>
+                    <div class="project-tech">
+                        <i class="fab fa-html5"></i>
+                        <i class="fab fa-css3-alt"></i>
+                        <i class="fab fa-js"></i>
+                    </div>
+                </div>
+
+                <!-- You can repeat .project-item for other projects as you wish -->
             </div>
         </div>
     </div>
 
-        <!-- Project Categories -->
+    <!-- Detail Modal for Bankist -->
+    <div class="modal__container detail-modal" id="bankistModal">
+        <div class="modal">
+            <div class="detail-modal-content">
+                <span class="close-btn close-detail-modal">&times;</span>
+                <h2>Bankist Web App</h2>
+                <hr>
+                <h3>About the Project</h3>
+                <p>
+                    This project was created as a part of a course on JavaScript Development by Jonas Schmedtmann.
+                    The project is a fictional bank website that allows users to log in, transfer money, request a loan, and close their account. The project was
+                    created using HTML, CSS, and JavaScript.
+                </p>
+                <hr>
+                <h3>Key Takeaways</h3>
+                <p>
+                    This Project was the first major application we created in the course.  It was a great way to learn how to use JavaScript to manipulate the DOM and
+                    create a dynamic website.  It was also a great way to learn how to use JavaScript objects and arrays to store and manipulate data.  This was a good
+                    starting foundation that I built upon in later projects.  Coming from C++ and C# I found this first project a slight challenge to adapt to a different
+                    language and syntax, but I was able to overcome this challenge and learn a lot in the process.
+                </p>
+                <hr>
+                <h3>Project Links</h3>
+                <a href="https://akaina1-bankist.netlify.app/" target="_blank">Netlify Live Link</a>
+                <br>
+                <a href=" " target="_blank">Gitbhub Repo Link[implement]</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail Modal for Mapty -->
+    <div class="modal__container detail-modal" id="maptyModal">
+        <div class="modal">
+            <div class="detail-modal-content">
+                <span class="close-btn close-detail-modal">&times;</span>
+                <h2>Mapty Web App</h2>
+                <hr>
+                <h3>About the Project</h3>
+                <p>
+                    This was the second project in my JavaScript course.  It was our first project that used a third party library.  The project uses the Leaflet library
+                    to create a map that allows users to add workouts to the map.  The project was created using HTML, CSS, JavaScript. The Leaflet library was used to
+                    create the map and the Geolocation API was used to get the users location.
+                </p>
+                <hr>
+                <h3>Key Takeaways</h3>
+                <p>
+                    This Project was the first time using an external library as well as learning about APIs.  Learning about API requests and responses was a great way to
+                    learn about asynchronous JavaScript and how loading content from external sources affects the user experience.  This project prompted me to look into
+                    various external libraries and APIs that I could use in future projects.  This also really made me understand the importance of optimizing our code for
+                    all users, including those with slower internet connections.
+
+                </p>
+                <hr>
+                <h3>Project Links</h3>
+                <a href="https://akaina1-mapty.netlify.app/" target="_blank">Netlify Live Link</a>
+                <br>
+                <a href=" " target="_blank">Gitbhub Repo Link</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail Modal for Forkify -->
+    <div class="modal__container detail-modal" id="forkifyModal">
+        <div class="modal">
+            <div class="detail-modal-content">
+                <span class="close-btn close-detail-modal">&times;</span>
+                <h2>Forkify Web App</h2>
+                <hr>
+                <h3>About the Project</h3>
+                <p>
+                    This project was our final project in my JavaScript course, it was a culmination of everything we learned in the course.  The project uses a custom
+                    API created by Jonas Schmedtmann to get recipe data.  The project allows users to search for recipes, view the recipe, and create Recipes that can
+                    then be saved to local storage.  The project was created using HTML, CSS, JavaScript.  The project also uses the Parcel bundler to bundle the project
+                    files.
+                </p>
+                <hr>
+                <h3>Key Takeaways</h3>
+                <p>
+                    This was a great final project that helped me to solidify my knowledge of JavaScript and how to use it to create a dynamic website.  This project also
+                    helped me to learn about the importance of bundling our code and how it can help to optimize our code for production.  It was my first time actually
+                    getting code ready for a production environment and it was a great learning experience.  Having to get my code ready for production and hosting it on
+                    Netlify proved to be a challenge as there was some issues with compaitbility between Parcel and the Fractional library that I used for the project.  I
+                    was able to remedy the issue by switching to a different library and it was a great learning experience in debugging and troubleshooting.
+
+                </p>
+                <hr>
+                <h3>Project Links</h3>
+                <a href="https://akaina1-forkify.netlify.app/" target="_blank">Netlify Live Link</a>
+                <br>
+                <a href=" " target="_blank">Gitbhub Repo Link</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hobby Project Categories -->
     <div class="project__categories">
-        <!-- Hobby Projects Category -->
         <div class="category__container" data-modal="hobbyProjectsModal">
             <div class="category__icon hobby">
-                <!-- You can use an <img> tag or CSS background-image property for the icon -->
                 <span class="category__label">Hobby Projects</span>
             </div>
         </div>
@@ -119,26 +360,25 @@
         <!-- School Projects Category -->
         <div class="category__container" data-modal="schoolProjectsModal">
             <div class="category__icon school">
-                <!-- You can use an <img> tag or CSS background-image property for the icon -->
                 <span class="category__label">School Projects</span>
             </div>
         </div>
     </div>
 
-        <!-- Sidebar Navigation -->
-        <div id="sidebar-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
-                <li><a href="projects.html">My Projects</a></li>
-            </ul>
-        </div>
+    <!-- Sidebar Navigation -->
+    <div id="sidebar-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+            <li><a href="projects.html">My Projects</a></li>
+        </ul>
+    </div>
 
-        <!-- Footer -->
-        <footer class="site-footer">
-            <p>&copy; 2023 Aaron Dost. All Rights Reserved.</p>
-        </footer>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2023 Aaron Dost. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>

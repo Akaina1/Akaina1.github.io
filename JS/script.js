@@ -154,40 +154,78 @@ async function animateTitlesAndSubtitles() {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Modal functions
 document.addEventListener("DOMContentLoaded", function () {
-    // 1. Open Modal Logic
+
+    // 1. Open Main Modal Logic
     document.querySelectorAll('.category__container').forEach(container => {
         container.addEventListener('click', function (e) {
             const modalID = e.currentTarget.getAttribute('data-modal');
-            const modal = document.querySelector(`#${modalID}`);
+            const modal = document.querySelector(`[data-modal="${modalID}"]`); // targeting the .modal__container
             if (modal) {
                 modal.classList.add('modal-visible');
             }
         });
     });
 
-    // 2. Close Modal Logic
-    document.querySelectorAll('.modal .close-btn').forEach(btn => {
-        btn.addEventListener('click', function () {
-            const modal = this.closest('.modal');
+    // 2. Open Detail Modal Logic
+    document.querySelectorAll('.project-item').forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.stopPropagation();
+
+            //// Close any currently open modals
+            //document.querySelectorAll('.modal__container.modal-visible').forEach(openModal => {
+            //    openModal.classList.remove('modal-visible');
+            //});
+
+            // Now open the targeted detail modal
+            const targetModalId = this.getAttribute('data-detail-modal');
+            const targetModal = document.getElementById(targetModalId);
+            if (targetModal) {
+                targetModal.classList.add('modal-visible');
+            }
+        });
+    });
+
+    // 3. Close Modal Button Logic
+    document.querySelectorAll('.close-btn').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const modal = this.closest('.modal__container');
             if (modal) {
                 modal.classList.remove('modal-visible');
             }
         });
     });
 
+    // Escape key functionality:
     document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-            document.querySelectorAll('.modal').forEach(modal => {
+        if (e.key === 'Escape' || e.key === "Escape") {
+            document.querySelectorAll('.modal__container.modal-visible').forEach(modal => {
                 modal.classList.remove('modal-visible');
             });
         }
     });
 
-    // Optional: Close modal when clicking outside of modal content
-    document.querySelectorAll('.modal').forEach(modal => {
-        modal.addEventListener('click', function (e) {
-            if (e.target === this) {
-                modal.classList.remove('modal-visible');
+    // Close Modal when clicking outside
+    document.querySelectorAll('.modal__container').forEach(modalContainer => {
+        modalContainer.addEventListener('click', function (e) {
+
+            // Try to find the modal content within the modal container
+            const modalContent = modalContainer.querySelector('.modal-content');
+
+            // Check if the modal content exists and if the click was outside of it
+            if (!modalContent || !modalContent.contains(e.target)) {
+
+                // Try removing from the modal (main modal scenario)
+                const innerModal = modalContent ? modalContent.querySelector('.modal') : null;
+                if (innerModal && innerModal.classList.contains('modal-visible')) {
+                    innerModal.classList.remove('modal-visible');
+                    return;
+                }
+
+                // Try removing from the modal__container (detail modal scenario)
+                if (modalContainer.classList.contains('modal-visible')) {
+                    modalContainer.classList.remove('modal-visible');
+                }
             }
         });
     });

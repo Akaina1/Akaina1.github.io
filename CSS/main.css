@@ -74,6 +74,7 @@ body {
     padding: 20px;
     border-radius: 50px;
     background-color: #fff;
+    border: 5px solid var(--primary-text-color);
     box-shadow: 0 0 20px rgb(70, 70, 70);
     font-family: 'Poppins', sans-serif;
     animation: fadeIn 3s ease-in;
@@ -212,8 +213,8 @@ body {
 
 .modal {
     display: none;
+    z-index: 2;
     position: fixed;
-    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
@@ -222,18 +223,85 @@ body {
     background-color: rgba(0,0,0,0.4);
 }
 
-.modal-visible {
-    display: block !important; /* The use of !important is just for this test */
-}
-
 .modal-content {
     position: relative;
     background-color: #fefefe;
     margin: 15% auto;
-    padding: 20px;
+    padding: 50px;
     border: 1px solid #888;
-    width: 60%;
+    width: 58%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.modal-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 120px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* For the active (front) modal */
+.detail-modal {
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+}
+
+.detail-modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 50px;
+    border: 1px solid #888;
+    width: 58%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    z-index: 6;
+}
+
+detail-modal-content h3, h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.detail-modal-content p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+}
+
+.detail-modal-content a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 12px;
+    background-color: transparent;
+    color: var(--accent-text-color);
+    text-decoration: none;
+    border-style: solid;
+    border-color: var(--accent-text-color);
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+}
+
+.detail-modal-content a:hover {
+    color: var(--secondary-text-color);
+    border-style: solid;
+    border-color: #000000;
+    background-color: var(--primary-text-color);
 }
 
 .close-btn {
@@ -249,6 +317,92 @@ body {
         cursor: pointer;
     }
 
+.project-item {
+    display: flex;
+    align-items: center;
+    width: 900px;
+    height: 150px;
+    border-radius: 50px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgb(70, 70, 70);
+    border-style: solid;
+    border-color: var(--primary-text-color);
+    animation: fadeIn 1s ease-in;
+    margin-bottom: 30px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centers the container */
+    margin-top: 50px;
+}
+
+    .project-item:hover {
+        box-shadow: 0 0 30px rgb(0, 0, 0); /* Intensify the shadow for example */
+        background-color: var(--primary-text-color);
+    }
+    /* 3. Styles for main image, title and language icons */
+    .project-icon {
+        margin-right: 10px; /* Space between image and title */
+        margin-left: 10px; /* Space between image and title */
+    }
+
+        .project-icon img {
+            width: 60%; /* Adjust the size of the main image */
+            height: 60%; /* Adjust the size of the main image */
+        }
+
+        .project-item i#defaultIcon {
+            font-size: 60px; /* Adjust the size of the main icon */
+            color: var(--accent-text-color); /* Color for the main icon */
+            margin-right: 130px; /* Space between image and title */
+            margin-left: 20px; /* Space between image and title */
+        }
+
+h3 {
+    flex: 1; /* Allows the title to take the remaining space between image and language icons */
+    margin-right: 20px; /* Space between title and language icons */
+    font-size: 24px; /* Adjust the size of the title */
+    color: var(--accent-text-color); /* Color for the main icon */
+    font-family: 'Poppins', sans-serif;
+}
+
+    .project-tech {
+        display: flex;
+        gap: 10px; /* Spacing between individual tech icons */
+        margin-right: 50px; /* Space between language icons and the right edge of the container */
+    }
+
+        .project-tech i {
+            font-size: 32px; /* Adjust the size of the tech stack Font Awesome icons */
+            color: var(--accent-text-color); /* Color for tech stack icons */
+        }
+
+
+        .project-tech i#iconsTogether {
+            margin-right: -10px; /* Space between tech icons */
+            font-size: 22px; /* Adjust the size of the tech stack Font Awesome icons */
+        }
+
+        /* Hover effect for .project-item */
+        .project-item:hover .project-icon i,
+        .project-item:hover .project-icon i#defaultIcon,
+        .project-item:hover h3,
+        .project-item:hover .project-tech i{
+            color: #000; /* Darkened color on hover */
+            transition: color 0.3s ease-in-out;
+        }
+
+.modal__container {
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-visible {
+    display: block;
+}
+
+.modal__container.modal-visible .modal {
+    display: block;
+}
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .page__title {
     position: absolute;
